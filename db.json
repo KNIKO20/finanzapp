@@ -28,13 +28,13 @@
       "category": "home"
     },
     {
-      "id": "9205",
       "name": "Salary",
       "details": "Monthly salary",
       "amount": 1300,
       "date": "2025-06-01T09:00:00.000Z",
       "type": "income",
-      "category": "home"
+      "category": "home",
+      "id": "9205"
     },
     {
       "id": "9206",

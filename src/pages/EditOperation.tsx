@@ -48,7 +48,7 @@ function Update() {
 
  
   React.useEffect(()=>{
-    fetch(`http://${API_URL}:8000/operations` + operationid)
+    fetch(`http://${API_URL}:8000/operations/` + operationid)
     .then((res)=>res.json())
     .then((data)=>{
         setOperationName(data.name)
@@ -75,7 +75,7 @@ function Update() {
       type: selectedType,
       category: selectedCategory,
     };
-    fetch(`http://${API_URL}:8000/operations` + operationid, {
+    fetch(`http://${API_URL}:8000/operations/` + operationid, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOperation),
