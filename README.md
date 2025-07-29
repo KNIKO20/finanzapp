@@ -1,6 +1,6 @@
 # 🧾 FinanzApp
 
-**App web moderna para el control de gastos personales.**
+**App CRUD web moderna para el control de gastos personales.**
 
 Esta aplicación permite gestionar ingresos, gastos, categorías y visualizar estadísticas mediante una interfaz limpia y responsiva. Está desarrollada con **React 19**, **TypeScript**, **Vite**, **TailwindCSS** y una base de datos JSON simulada mediante `json-server`.
 
