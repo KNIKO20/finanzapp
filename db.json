@@ -1,3 +1,328 @@
 {
-  "operations": []
+  "operations": [
+    {
+      "id": "9200",
+      "name": "Salary",
+      "details": "Monthly salary",
+      "amount": 1300,
+      "date": "2025-01-01T09:00:00.000Z",
+      "type": "income",
+      "category": "home"
+    },
+    {
+      "id": "9202",
+      "name": "Salary",
+      "details": "Monthly salary",
+      "amount": 1300,
+      "date": "2025-03-01T09:00:00.000Z",
+      "type": "income",
+      "category": "home"
+    },
+    {
+      "id": "9204",
+      "name": "Salary",
+      "details": "Monthly salary",
+      "amount": 1300,
+      "date": "2025-05-01T09:00:00.000Z",
+      "type": "income",
+      "category": "home"
+    },
+    {
+      "id": "9205",
+      "name": "Salary",
+      "details": "Monthly salary",
+      "amount": 1300,
+      "date": "2025-06-01T09:00:00.000Z",
+      "type": "income",
+      "category": "home"
+    },
+    {
+      "id": "9206",
+      "name": "Salary",
+      "details": "Monthly salary",
+      "amount": 1300,
+      "date": "2025-07-01T09:00:00.000Z",
+      "type": "income",
+      "category": "home"
+    },
+    {
+      "id": "9207",
+      "name": "Weekly shop",
+      "details": "Vegetables, pasta, cheese and bread",
+      "amount": 32.1,
+      "date": "2025-07-12T10:30:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9208",
+      "name": "Cinema night",
+      "details": "Tickets and snacks",
+      "amount": 25,
+      "date": "2025-06-25T20:30:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9209",
+      "name": "Electricity bill",
+      "details": "Monthly electricity",
+      "amount": 60.5,
+      "date": "2025-06-10T12:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9210",
+      "name": "Freelance work",
+      "details": "Web app payment",
+      "amount": 500,
+      "date": "2025-05-18T15:45:00.000Z",
+      "type": "income",
+      "category": "study"
+    },
+    {
+      "id": "9211",
+      "name": "Concert",
+      "details": "Outdoor music festival",
+      "amount": 80,
+      "date": "2025-04-15T19:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9212",
+      "name": "Rent",
+      "details": "Monthly apartment rent",
+      "amount": 600,
+      "date": "2025-03-05T11:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9213",
+      "name": "Groceries",
+      "details": "Weekly groceries",
+      "amount": 35.2,
+      "date": "2025-02-20T14:15:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9214",
+      "name": "Streaming subscription",
+      "details": "Monthly Netflix subscription",
+      "amount": 12.99,
+      "date": "2025-01-15T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9215",
+      "name": "Book purchase",
+      "details": "Technical books for course",
+      "amount": 45,
+      "date": "2025-06-03T17:00:00.000Z",
+      "type": "expenditure",
+      "category": "study"
+    },
+    {
+      "id": "9216",
+      "name": "Pizza night",
+      "details": "Pizza and drinks with friends",
+      "amount": 20.5,
+      "date": "2025-05-28T21:00:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9300",
+      "name": "Weekly groceries",
+      "details": "Fruits, bread, milk, pasta",
+      "amount": 28.45,
+      "date": "2025-01-05T11:00:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9301",
+      "name": "Rent",
+      "details": "Monthly apartment rent",
+      "amount": 600,
+      "date": "2025-01-10T09:30:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9302",
+      "name": "Netflix subscription",
+      "details": "Monthly streaming payment",
+      "amount": 12.99,
+      "date": "2025-01-15T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9303",
+      "name": "Pizza night",
+      "details": "Dinner with friends",
+      "amount": 24.8,
+      "date": "2025-02-07T21:15:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9304",
+      "name": "Books",
+      "details": "Books for programming course",
+      "amount": 45,
+      "date": "2025-02-12T16:20:00.000Z",
+      "type": "expenditure",
+      "category": "study"
+    },
+    {
+      "id": "9305",
+      "name": "Concert ticket",
+      "details": "Live music event",
+      "amount": 75,
+      "date": "2025-02-23T20:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9306",
+      "name": "Electricity bill",
+      "details": "Monthly electricity",
+      "amount": 58.3,
+      "date": "2025-03-08T10:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9307",
+      "name": "Weekly groceries",
+      "details": "Rice, vegetables, eggs",
+      "amount": 32.1,
+      "date": "2025-03-15T12:30:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9308",
+      "name": "Cinema night",
+      "details": "Tickets and popcorn",
+      "amount": 19.5,
+      "date": "2025-03-28T19:40:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9309",
+      "name": "Online course",
+      "details": "Frontend development course",
+      "amount": 89,
+      "date": "2025-04-10T14:15:00.000Z",
+      "type": "expenditure",
+      "category": "study"
+    },
+    {
+      "id": "9310",
+      "name": "Groceries",
+      "details": "Weekly groceries",
+      "amount": 26.75,
+      "date": "2025-04-17T10:30:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9311",
+      "name": "Water bill",
+      "details": "Monthly water payment",
+      "amount": 22.4,
+      "date": "2025-05-02T11:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9312",
+      "name": "Game purchase",
+      "details": "New PC game",
+      "amount": 49.99,
+      "date": "2025-05-20T18:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9313",
+      "name": "Rent",
+      "details": "Monthly apartment rent",
+      "amount": 600,
+      "date": "2025-06-10T09:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9314",
+      "name": "Weekly groceries",
+      "details": "Fruits, meat, cereals",
+      "amount": 34.9,
+      "date": "2025-06-15T10:45:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "9315",
+      "name": "Study materials",
+      "details": "Notebooks and pens",
+      "amount": 14.2,
+      "date": "2025-06-25T13:30:00.000Z",
+      "type": "expenditure",
+      "category": "study"
+    },
+    {
+      "id": "9316",
+      "name": "Streaming subscription",
+      "details": "Disney+ monthly subscription",
+      "amount": 8.99,
+      "date": "2025-07-05T09:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "9317",
+      "name": "Electricity bill",
+      "details": "Monthly electricity payment",
+      "amount": 62.1,
+      "date": "2025-07-11T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "home"
+    },
+    {
+      "id": "9318",
+      "name": "Dinner out",
+      "details": "Restaurant with family",
+      "amount": 48,
+      "date": "2025-07-19T21:15:00.000Z",
+      "type": "expenditure",
+      "category": "food"
+    },
+    {
+      "id": "8e5e",
+      "name": "Mobile",
+      "details": "Poco F6",
+      "amount": 300,
+      "date": "2025-09-10T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "3772",
+      "name": "Prueba ",
+      "details": "A",
+      "amount": 134.48,
+      "date": "2025-07-02T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    }
+  ]
 }

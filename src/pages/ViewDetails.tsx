@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -31,7 +32,7 @@ const [operation, setOperation] = useState<Operation | undefined>(undefined);
 
  
 useEffect(()=>{
-fetch("http://localhost:8000/operations/" + operationid)
+fetch(`http://${API_URL}:8000/operations/` + operationid)
 .then((res)=>res.json())
 .then((data)=>setOperation(data))
 .catch((err)=>console.log(err.message))
@@ -39,7 +40,7 @@ fetch("http://localhost:8000/operations/" + operationid)
 
 const deleteField=(id: string | number)=>{
     if(window.confirm("Are you sure you want to delete this field id: "+ id))
-    {fetch("http://localhost:8000/operations/" + id, {
+    {fetch(`http://${API_URL}:8000/operations/` + id, {
     method: 'DELETE',
     })
     .then(()=>{alert("Removed student data successfully");})

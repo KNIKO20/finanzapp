@@ -14,7 +14,7 @@ function Dashboard() {
             <div className='bg-neutral-500 p-4 w-1/2 rounded-xl'></div>
             <div className='bg-neutral-500 p-4 w-1/2 rounded-xl' ></div>
           </div>
-          <div className="w-full h-1/3 bg-green-600 p-4 text-white rounded-xl"><ExampleChart></ExampleChart></div>
+          <div className="w-full min-h-[300px] bg-neutral-500 p-4 text-white rounded-xl"><ExampleChart></ExampleChart></div>
           <div className="flex h-1/3 gap-4 w-full">
             <div className='bg-neutral-500 p-4 w-1/2 rounded-xl'></div>
             <div className='bg-neutral-500 p-4 w-1/2 rounded-xl'></div>

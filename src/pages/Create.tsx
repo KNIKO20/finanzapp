@@ -16,7 +16,7 @@ import {
   AlertTitle,
 } from "@/components/ui/alert"
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -57,7 +57,7 @@ function Create() {
       type: selectedType,
       category: selectedCategory,
     };
-    fetch("http://localhost:8000/operations", {
+    fetch(`http://${API_URL}:8000/operations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOperation),

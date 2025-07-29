@@ -11,7 +11,7 @@ import {
   TableFooter
 } from "@/components/ui/table"
 import { useNavigate } from "react-router-dom";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 function OperationsTable() {
@@ -29,7 +29,7 @@ function OperationsTable() {
   const [operations, setOperations] = useState<OperationType[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:8000/operations")
+    fetch(`http://${API_URL}:8000/operations`)
     .then((res)=>res.json())
     .then((data)=>setOperations(data))
     .catch((err)=> console.log(err.message))
@@ -72,7 +72,7 @@ function OperationsTable() {
             <TableFooter>
                 <TableRow>
                 <TableCell colSpan={3}>Total</TableCell>
-                <TableCell className="text-right">{total}</TableCell>
+                <TableCell className="text-right">{total.toFixed(2)}</TableCell>
                 </TableRow>
             </TableFooter>
             </Table>
