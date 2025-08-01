@@ -2,17 +2,18 @@ import { ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, typ
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import { ChartContainer } from "@/components/ui/chart"
 import { useEffect, useState } from "react"
+import { Card } from "./ui/card";
 const API_URL = import.meta.env.VITE_API_URL;
 
 
 const chartConfig = {
   income: {
     label: "Income",
-    color: "#1B7C1B",
+    color: "#489E6E",
   },
   expenditure: {
     label: "Expenditure",
-    color: "#C11B17",
+    color: "#BA4E3D",
   },
 } satisfies ChartConfig
 
@@ -58,7 +59,8 @@ function ExampleChart() {
 
   return (
     <>
-    <ChartContainer config={chartConfig} className="h-full w-full min-h-[200px]">
+    <Card>
+    <ChartContainer config={chartConfig} className="max-h-[400px]">
       <BarChart accessibilityLayer data={chartData}>
         <CartesianGrid vertical={false}  />
         <XAxis
@@ -74,6 +76,7 @@ function ExampleChart() {
         <Bar dataKey="expenditure" fill="var(--color-expenditure)" radius={4} />
       </BarChart>
     </ChartContainer>
+    </Card>
     </>
   )
 }

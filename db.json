@@ -163,13 +163,13 @@
       "category": "leisure"
     },
     {
-      "id": "9303",
       "name": "Pizza night",
       "details": "Dinner with friends",
       "amount": 24.8,
       "date": "2025-02-07T21:15:00.000Z",
       "type": "expenditure",
-      "category": "food"
+      "category": "food",
+      "id": "9303"
     },
     {
       "id": "9304",
@@ -321,6 +321,24 @@
       "details": "A",
       "amount": 134.48,
       "date": "2025-07-02T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "leisure"
+    },
+    {
+      "id": "3773",
+      "name": "Bono de Transporte ",
+      "details": "-",
+      "amount": 60,
+      "date": "2024-11-02T08:00:00.000Z",
+      "type": "expenditure",
+      "category": "transport"
+    },
+    {
+      "id": "3774",
+      "name": "Fiesta ",
+      "details": "-",
+      "amount": 120,
+      "date": "2024-10-02T08:00:00.000Z",
       "type": "expenditure",
       "category": "leisure"
     }

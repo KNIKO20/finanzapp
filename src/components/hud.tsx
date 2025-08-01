@@ -31,7 +31,7 @@ function Hud({isHome}: Props) {
               </Link>)}
           </div>
           <div className=" absolute left-1/8 transform -translate-x-1/2 -translate-y-1/2 p-2">
-            <Link to={"/"}>
+            <Link to={"/stats"}>
               <TiChartLineOutline className="text-white w-7 h-7 hover:text-neutral-200" ></TiChartLineOutline>
             </Link>
           </div>  
