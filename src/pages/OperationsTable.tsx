@@ -31,7 +31,13 @@ function OperationsTable() {
   useEffect(() => {
     fetch(`http://${API_URL}:8000/operations`)
     .then((res)=>res.json())
-    .then((data)=>setOperations(data))
+    .then((data)=>{
+    const normalized = data.map((op: { amount: string; }) => ({
+      ...op,
+      amount: parseFloat(op.amount)
+    }));
+    setOperations(normalized);
+  })
     .catch((err)=> console.log(err.message))
   }, []
   )
@@ -60,7 +66,7 @@ function OperationsTable() {
 
 
                   <TableRow key={operation.id} className='hover:bg-neutral-600' onClick={()=>navigate(`/details/view/${operation.id}`)}>
-                      <TableCell className="font-medium text-left">{operation.name}</TableCell>
+                      <TableCell className="font-medium text-left">{operation.name.length <= 11 ? operation.name : operation.name.slice(0,11) + "..."}</TableCell>
                       <TableCell className='text-left'>{operation.date.slice(0,10)}</TableCell>
                       <TableCell className='text-left '>{operation.category[0].toUpperCase() + operation.category.slice(1)}</TableCell>
                       <TableCell className="text-right">{

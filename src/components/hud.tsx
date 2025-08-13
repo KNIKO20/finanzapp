@@ -26,7 +26,7 @@ function Hud({isHome}: Props) {
                 <TiPlus className="text-white w-10 h-10"></TiPlus>
               </Link>
             ) : (
-              <Link to={"/"}>  
+              <Link to={"/dashboard"}>  
                 <TiHome className="text-white w-10 h-10"></TiHome> 
               </Link>)}
           </div>

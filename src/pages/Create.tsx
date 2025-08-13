@@ -56,13 +56,14 @@ function Create() {
       date: selectedDate,
       type: selectedType,
       category: selectedCategory,
+      user_id: "08ed4c7b-b858-4956-b9e3-057562fd3e62",
     };
     fetch(`http://${API_URL}:8000/operations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOperation),
     })
-    .then(()=>navigate("/"))
+    .then(()=>navigate("/dashboard"))
     .catch((err)=>console.log(err.message))
   };
 
@@ -105,8 +106,8 @@ function Create() {
                       <Calendar22 value={selectedDate} onChange={setSelectedDate}></Calendar22>
                   </div>
                   <div className="mb-6 flex justify-between">
-                    <ComboBoxResponsiveType onChange={handleChangeType}></ComboBoxResponsiveType>
-                    <ComboBoxResponsiveCategory  onChange={handleChangeCategory}></ComboBoxResponsiveCategory>
+                    <ComboBoxResponsiveType onChange={handleChangeType} value={""}></ComboBoxResponsiveType>
+                    <ComboBoxResponsiveCategory  onChange={handleChangeCategory} value={""}></ComboBoxResponsiveCategory>
                   </div>
                   
                 <div className="flex content-between">

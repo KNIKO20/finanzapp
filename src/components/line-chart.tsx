@@ -15,6 +15,14 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { useEffect, useState } from "react"
+import React from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 const API_URL = import.meta.env.VITE_API_URL;
 export const description = "A multiple line chart"
 
@@ -42,11 +50,20 @@ export function ChartLineMultiple() {
     }
   
     const [operations, setOperations] = useState<OperationType[]>([])
-  
+
+    const [activeYear, setActiveYear] = React.useState("2025")
+    const dataYear = [...new Set(operations.map(op => op.date.slice(0, 4)))];
+
     useEffect(() => {
       fetch(`http://${API_URL}:8000/operations`)
       .then((res)=>res.json())
-      .then((data)=>setOperations(data))
+      .then((data)=>{
+      const normalized = data.map((op: { amount: string; }) => ({
+        ...op,
+        amount: parseFloat(op.amount)
+      }));
+      setOperations(normalized);
+    })
       .catch((err)=> console.log(err.message))
     }, []);
     const months = [
@@ -56,7 +73,7 @@ export function ChartLineMultiple() {
     ];
     const chartData = months.map((month, index) => {
       const monthNum = (index + 1).toString().padStart(2, "0");
-      const monthOps = operations.filter((op) => op.date.slice(5,7) === monthNum);
+      const monthOps = operations.filter((op) => op.date.slice(0,4) === activeYear && op.date.slice(5,7) === monthNum);
       const income = monthOps.filter(op => op.type === "income").reduce((sum,op)=> sum + op.amount, 0);
       const expenditure = monthOps.filter(op => op.type === "expenditure").reduce((sum,op)=> sum + op.amount, 0);
       return {
@@ -70,6 +87,32 @@ export function ChartLineMultiple() {
       <CardHeader>
         <CardTitle>Line Chart - Multiple</CardTitle>
         <CardDescription>January - December</CardDescription>
+        {/* Select year function */}
+        <Select value={activeYear} onValueChange={setActiveYear}>
+          <SelectTrigger
+            className="ml-auto h-7 w-[130px] rounded-lg pl-2.5"
+            aria-label="Select year"
+          >
+            <SelectValue placeholder="Select year" />
+          </SelectTrigger>
+          <SelectContent align="end" className="rounded-xl">
+            {dataYear.map((key) => {
+        
+
+              return (
+                <SelectItem
+                  key={key}
+                  value={key}
+                  className="rounded-lg [&_span]:flex"
+                >
+                  <div className="flex items-center gap-2 text-xs">
+                    {key}
+                  </div>
+                </SelectItem>
+              )
+            })}
+          </SelectContent>
+        </Select>
       </CardHeader>
       <CardContent>
         <div className="flex justify-center items-center">

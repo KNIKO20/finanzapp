@@ -6,6 +6,7 @@ import OperationsTable from './pages/OperationsTable';
 import ViewDetails from './pages/ViewDetails';
 import Update from './pages/EditOperation';
 import { Stats } from './pages/Stats';
+import { Login } from './pages/Login';
 
 
 
@@ -15,7 +16,8 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create" element={<Create />} />
         <Route path="/details" element={<OperationsTable />} />
         <Route path="/stats" element={<Stats />} />

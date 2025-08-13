@@ -78,7 +78,13 @@ export function ChartPieInteractive() {
   React.useEffect(() => {
     fetch(`http://${API_URL}:8000/operations`)
     .then((res)=>res.json())
-    .then((data)=>setOperations(data))
+    .then((data)=>{
+    const normalized = data.map((op: { amount: string; }) => ({
+      ...op,
+      amount: parseFloat(op.amount)
+    }));
+    setOperations(normalized);
+  })
     .catch((err)=> console.log(err.message))
   }, []);
   const categoriesList = [
@@ -112,7 +118,7 @@ export function ChartPieInteractive() {
       <CardHeader className="flex-row items-start space-y-0 pb-0">
         <div className="grid gap-1">
           <CardTitle>Pie Chart - Expenditures</CardTitle>
-          <CardDescription>January - December 2024</CardDescription>
+          <CardDescription>January - December {activeYear}</CardDescription>
         </div>
         <Select value={activeCategory} onValueChange={setActiveCategory}>
           <SelectTrigger
@@ -148,11 +154,10 @@ export function ChartPieInteractive() {
               )
             })}
           </SelectContent>
-
-          {/* Select year function */}
-
         </Select>
-                <Select value={activeYear} onValueChange={setActiveYear}>
+
+        {/* Select year function */}
+        <Select value={activeYear} onValueChange={setActiveYear}>
           <SelectTrigger
             className="ml-auto h-7 w-[130px] rounded-lg pl-2.5"
             aria-label="Select year"
