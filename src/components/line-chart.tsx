@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
 export const description = "A multiple line chart"
 
@@ -39,6 +40,7 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function ChartLineMultiple() {
+    const navigate = useNavigate();
     type OperationType = {
     id: number;
     name: string;
@@ -55,9 +57,16 @@ export function ChartLineMultiple() {
     const dataYear = [...new Set(operations.map(op => op.date.slice(0, 4)))];
 
     useEffect(() => {
-      fetch(`http://${API_URL}:8000/operations`)
-      .then((res)=>res.json())
+      fetch(`http://${API_URL}:8000/operations/show`, { credentials: "include" })
+      .then((res)=>{
+        if (res.status === 401 || res.status === 403) {
+          navigate("/")
+          return null
+        }
+        res.json()
+      })
       .then((data)=>{
+      if (!data) return;
       const normalized = data.map((op: { amount: string; }) => ({
         ...op,
         amount: parseFloat(op.amount)

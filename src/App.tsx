@@ -7,6 +7,8 @@ import ViewDetails from './pages/ViewDetails';
 import Update from './pages/EditOperation';
 import { Stats } from './pages/Stats';
 import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { Options } from './pages/Options';
 
 
 
@@ -17,10 +19,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create" element={<Create />} />
         <Route path="/details" element={<OperationsTable />} />
         <Route path="/stats" element={<Stats />} />
+        <Route path="/options" element={<Options />} />
         <Route path='/details/view/:operationid' element={<ViewDetails/>}></Route>
         <Route path='/details/edit/:operationid' element={<Update/>}></Route>
 

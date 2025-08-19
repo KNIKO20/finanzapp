@@ -56,12 +56,12 @@ function Create() {
       date: selectedDate,
       type: selectedType,
       category: selectedCategory,
-      user_id: "08ed4c7b-b858-4956-b9e3-057562fd3e62",
     };
-    fetch(`http://${API_URL}:8000/operations`, {
+    fetch(`http://${API_URL}:8000/operations/add`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOperation),
+      credentials: "include"
     })
     .then(()=>navigate("/dashboard"))
     .catch((err)=>console.log(err.message))
@@ -93,7 +93,7 @@ function Create() {
                   <div className="mb-6">
                       <div className="grid w-full gap-3">
                           <Label htmlFor="details" className="label-form">Details</Label>
-                          <Textarea placeholder="e.g.: Ice cream, bread, cereal and milk" id="details"  required value={details} onChange={e => setDetails(e.target.value)}/>
+                          <Textarea placeholder="e.g.: Ice cream, bread, cereal and milk" id="details" value={details} onChange={e => setDetails(e.target.value)}/>
                       </div>
                   </div>
                   <div className="mb-6">

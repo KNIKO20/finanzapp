@@ -32,7 +32,9 @@ const [operation, setOperation] = useState<Operation | undefined>(undefined);
 
  
 useEffect(()=>{
-fetch(`http://${API_URL}:8000/operations/` + operationid)
+fetch(`http://${API_URL}:8000/operations/details/` + operationid, {
+    credentials: "include",
+  })
 .then((res)=>res.json())
 .then((data)=>setOperation(data))
 .catch((err)=>console.log(err.message))
@@ -40,10 +42,11 @@ fetch(`http://${API_URL}:8000/operations/` + operationid)
 
 const deleteField=(id: string | number)=>{
     if(window.confirm("Are you sure you want to delete this field id: "+ id))
-    {fetch(`http://${API_URL}:8000/operations/` + id, {
+    {fetch(`http://${API_URL}:8000/operations/delete/` + id, {
     method: 'DELETE',
+    credentials: "include"
     })
-    .then(()=>{alert("Removed student data successfully");})
+    .then(()=>{alert("Removed operation data successfully");})
     .then(()=>navigate("/details"))
     .catch((err)=>console.log(err.message))}
 }

@@ -29,15 +29,19 @@ function OperationsTable() {
   const [operations, setOperations] = useState<OperationType[]>([])
 
   useEffect(() => {
-    fetch(`http://${API_URL}:8000/operations`)
+    fetch(`http://${API_URL}:8000/operations/show`,{ method: "GET", credentials: "include" })
     .then((res)=>res.json())
-    .then((data)=>{
-    const normalized = data.map((op: { amount: string; }) => ({
-      ...op,
-      amount: parseFloat(op.amount)
-    }));
-    setOperations(normalized);
-  })
+    .then(data => {
+      if (!Array.isArray(data)) {
+        console.error("Unexpected response:", data);
+        return;
+      }
+      const normalized = data.map(op => ({
+        ...op,
+        amount: parseFloat(op.amount)
+      }));
+      setOperations(normalized);
+    })
     .catch((err)=> console.log(err.message))
   }, []
   )

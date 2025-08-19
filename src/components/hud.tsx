@@ -46,7 +46,7 @@ function Hud({isHome}: Props) {
             </Link>
           </div>
           <div className=" absolute left-7/8 transform -translate-x-1/2 -translate-y-1/2 p-2">
-            <Link to={"/"}>
+            <Link to={"/options"}>
               <TiCogOutline className="text-white w-7 h-7 hover:text-neutral-200" ></TiCogOutline>
             </Link>
           </div>

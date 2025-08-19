@@ -25,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useNavigate } from "react-router-dom";
 
 export const description = "An interactive pie chart"
 
@@ -69,6 +70,7 @@ type OperationType = {
 
 
 export function ChartPieInteractive() {
+  const navigate = useNavigate();
   const [operations, setOperations] = React.useState<OperationType[]>([])
 
   const [activeYear, setActiveYear] = React.useState("2025")
@@ -76,8 +78,16 @@ export function ChartPieInteractive() {
 
 
   React.useEffect(() => {
-    fetch(`http://${API_URL}:8000/operations`)
-    .then((res)=>res.json())
+    fetch(`http://${API_URL}:8000/operations/show`, {
+    credentials: "include",
+  })
+    .then((res)=>{
+        if (res.status === 401 || res.status === 403) {
+          navigate("/")
+          return null
+        }
+        res.json()
+      })
     .then((data)=>{
     const normalized = data.map((op: { amount: string; }) => ({
       ...op,
