@@ -1,19 +1,43 @@
-# 🧾 FinanzApp
+# FinanzApp – Frontend 💰  
 
-**App CRUD web moderna para el control de gastos personales.**
-
-Esta aplicación permite gestionar ingresos, gastos, categorías y visualizar estadísticas mediante una interfaz limpia y responsiva. Está desarrollada con **React 19**, **TypeScript**, **Vite**, **TailwindCSS** y una base de datos JSON simulada mediante `json-server`.
+Interfaz web para la gestión de finanzas personales.  
+Desarrollada en **React + TypeScript + TailwindCSS**, se conecta al backend para mostrar operaciones, balances y estadísticas de forma clara y moderna.  
 
 ---
 
-## 🚀 Tecnologías usadas
+## 🚀 Características  
 
-- ⚛️ React 19 + TypeScript
-- 🧩 React Router DOM v7
-- 🎨 TailwindCSS 4
-- 📊 Recharts para gráficas
-- 📦 json-server para simular una API REST (CRUD)
-- 📁 Vite como bundler
+- 📊 Visualización de operaciones (ingresos y gastos).  
+- 🔐 Autenticación de usuarios con JWT.  
+- 🍪 Manejo de sesión con cookies seguras.  
+- 📱 Diseño responsive con TailwindCSS.  
+- ⚡ Integración con backend real (Node/Express + PostgreSQL).  
+
+---
+
+## 🛠️ Tecnologías  
+
+- [React](https://react.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [TailwindCSS](https://tailwindcss.com/)  
+- [Vite](https://vitejs.dev/)  
+
+---
+
+## 📂 Estructura del proyecto  
+
+```bash
+finanzapp-frontend/
+│── src/
+│   ├── components/    # Componentes reutilizables
+│   ├── pages/         # Páginas principales (Login, Dashboard, etc.)
+│   ├── hooks/         # Custom hooks
+│   ├── services/      # Conexión con el backend
+│   └── App.tsx        # Configuración de rutas
+│── public/
+│── package.json
+│── vite.config.ts
+│── README.md
 
 ---
 
@@ -32,20 +56,13 @@ cd finanzapp
 npm install
 ```
 
-### 3. Inicia el backend (json-server)
+### 3. Crear archivo .env
 
-```bash
-npx json-server --watch db.json --port 8000
+```.env
+VITE_API_URL=http://localhost:8000
 ```
-
-> Asegúrate de tener un archivo `db.json` en la raíz del proyecto.  
-> Puedes crear uno como ejemplo:
-
-```json
-{
-  "operations": []
-}
-```
+⚠️ Asegúrate de que el backend de FinanzApp esté corriendo en el puerto 8000.
+El backend está en este repo: finanzapp-backend.
 
 ### 4. Inicia el frontend
 
@@ -85,22 +102,12 @@ npm run lint       # Linting del código
 
 ---
 
-## 📁 Estructura del proyecto
+## 🔐 Autenticación
+Al iniciar sesión, el token JWT se guarda en una cookie segura.
 
-```
-finanzapp/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   ├── utils/
-│   └── main.tsx
-├── db.json
-├── tailwind.config.js
-├── vite.config.ts
-└── README.md
-```
+Cada request al backend incluye automáticamente la cookie.
+
+Si la sesión expira → redirige al login.
 
 ---
 
