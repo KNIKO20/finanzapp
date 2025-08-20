@@ -55,7 +55,7 @@ function ExampleChart() {
         navigate("/")
         return null;
       }
-      res.json()
+      return res.json()
     })
     .then((data)=>{
     const normalized = data.map((op: { amount: string; }) => ({

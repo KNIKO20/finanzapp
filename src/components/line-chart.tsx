@@ -63,7 +63,7 @@ export function ChartLineMultiple() {
           navigate("/")
           return null
         }
-        res.json()
+        return res.json()
       })
       .then((data)=>{
       if (!data) return;
