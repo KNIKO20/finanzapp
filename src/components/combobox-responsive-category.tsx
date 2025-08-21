@@ -55,6 +55,14 @@ const statuses: Status[] = [
     value: "transport",
     label: "Transport",
   },
+  {
+    value: "health",
+    label: "Health",
+  },
+  {
+    value: "shopping",
+    label: "Shopping",
+  },
 ]
 
 

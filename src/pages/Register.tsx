@@ -25,10 +25,12 @@ export function Register() {
   const [password,setPassword] = useState("");
   const [confirmPassword,setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
+ const [Message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if(password !== confirmPassword){
+      setMessage("Please put the same password in both fields.")
       setErrorMessage(true);
       return;
     }
@@ -38,7 +40,15 @@ export function Register() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     })
-    .then(()=>navigate("/"))
+    .then(res => {if (res.status === 400) {
+      setMessage("Does not comply the requirements")
+      setErrorMessage(true);
+      return;
+    } else if (res.status === 409){
+      setMessage("Email already resgistered")
+      setErrorMessage(true);
+    }
+    else {navigate("/")}})
     .catch((err)=>console.log(err.message))
   };
 
@@ -50,7 +60,7 @@ export function Register() {
                 <div className="grid w-full max-w-xl items-start justify-center gap-4">
                   <Alert variant="destructive">
                     <AlertCircleIcon />
-                    <AlertTitle>Please put the same password in both fields.</AlertTitle>
+                    <AlertTitle>{Message}</AlertTitle>
                   </Alert>
                 </div> 
           )}
@@ -65,7 +75,7 @@ export function Register() {
             <CardHeader>
               <CardTitle>Sign Up</CardTitle>
               <CardDescription>
-                Enter your email below and set a password to register your account
+                Please enter a valid email address and create a secure password with at least 8 characters, including uppercase, lowercase, numbers, and symbols.
               </CardDescription>
             </CardHeader>
             <CardContent>

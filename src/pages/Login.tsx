@@ -79,9 +79,9 @@ export function Login() {
                       <Button type="submit" className="w-full text-neutral-50">
                         Login
                       </Button>
-                      <Button variant="outline" className="w-full">
+                      {/* <Button variant="outline" className="w-full">
                         Login with Google
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                   <div className="mt-4 text-center text-sm">

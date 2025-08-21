@@ -1,6 +1,5 @@
 import { TiChartLineOutline, TiPlus, TiThList, TiCalendarOutline, TiCogOutline, TiHome } from "react-icons/ti"
 import { Link } from "react-router-dom"
-import { ModeToggle } from '../components/mode-toggle'
 import { ThemeProvider } from "@/components/theme-provider"
 
 
@@ -14,8 +13,7 @@ function Hud({isHome}: Props) {
     <>
       <div className='fixed top-4 right-2 z-50'>
         <div>
-          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-              <ModeToggle></ModeToggle>
+          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme" children={undefined}>
           </ThemeProvider>
         </div>
       </div>

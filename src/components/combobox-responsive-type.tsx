@@ -43,18 +43,18 @@ const statuses: Status[] = [
     value: "income",
     label: "Income",
   },
-  {
-    value: "monthly-income",
-    label: "Monthly Income",
-  },
-  {
-    value: "monthly-expenditure",
-    label: "Monthly Expenditure",
-  },
-  {
-    value: "loan",
-    label: "Loan",
-  },
+  // {
+  //   value: "monthly-income",
+  //   label: "Monthly Income",
+  // },
+  // {
+  //   value: "monthly-expenditure",
+  //   label: "Monthly Expenditure",
+  // },
+  // {
+  //   value: "loan",
+  //   label: "Loan",
+  // },
 ]
 
 
